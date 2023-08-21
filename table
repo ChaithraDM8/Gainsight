@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+    </style>
 </head>
 <body>
 <table border =1px>
@@ -10,12 +16,28 @@
         <td>Emil</td>
         <td>name</td>
         <td>ph num</td>
+        <td> place</td>
     </tr>
     <tr>
         <td>chaithra@gmial.com</td>
         <td>chaithra</td>
         <td>10000000</td>
+        <td> tumkur</td>
     </tr>
+    <tr>
+        <td>chaithra@gmial.com</td>
+        <td>chaithra</td>
+        <td>10000000</td>
+        <td> tumkur</td>
+    </tr>
+    <tr>
+        <td>chaithra@gmial.com</td>
+        <td>chaithra</td>
+        <td>10000000</td>
+        <td> tumkur</td>
+    </tr>
+    
+
 </table>
 </body>
 </html>
