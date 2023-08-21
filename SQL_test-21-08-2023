@@ -1,0 +1,11 @@
+1. select employee.emp_no, employee.emp_name, employee.emp_sal,department.dept_name,department.dept_manager,address.city,address.state from 
+( (address inner join department on address.address_id=department.address_id) 
+inner join employee on department.deptno = employee.deptno);
+
+2.  create table bankaccount (acc_no double primary key,acc_opened_date d
+ate, status text, balance double);
+    create table transaction(acc_no double,trans_type text, trans_date date, trans_amount double, 
+foreign key(acc_no) references bankaccount(acc_no) on delete cascade);
+
+3. select sum(emp_sal) , manager_name from employee group by department;
+   select emp_sal from employee order by emp_sal limit 3,1;
