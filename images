@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .firstrow{
+        display :flex;
+        padding:0 10px;
+        }
+        .4img{
+        flex:10%;
+        padding:0.4px;
+        }
+
+    </style>
+</head>
+<body>
+<div class ="firstrow">
+    <div class ="4img">
+    <img src="/./istockphoto-876173278-1024x1024.jpg">;
+    <img src="./istockphoto-472006589-1024x1024.jpg">;
+    <img src="./istockphoto-876173278-1024x1024.jpg">;
+    <img src="./istockphoto-472006589-1024x1024.jpg">;
+</div>
+</div>
+</body>
+</html>
