@@ -1,3 +1,45 @@
+public class Employee {
+    int empId;
+    String name;
+    int salary;
+    public Employee(int empId, String name, int salary) {
+        this.empId=empId;
+        this.name=name;
+        this.salary=salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+}
+
+
+public class Address {
+
+    String street;
+    String city;
+    String state;
+    public Address( String street, String city, String state) {
+        this.city=city;
+        this.state=state;
+        this.street=street;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
+}
+
 public class HashMapDisplay {
     public static void main(String[] args) {
         
