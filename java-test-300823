@@ -1,0 +1,55 @@
+package org.example;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+public class OrderedProductsDAO {
+    String url = "jdbc:mysql://localhost:3306/demo";
+
+    public void displayorderedProductByID(int productId){
+
+        ArrayList<Integer> orderIdList = new ArrayList<>();
+        ArrayList<String> orderIds= new ArrayList<>();;
+        try(Connection con = DriverManager.getConnection(url,"root","chaithra");
+            PreparedStatement pst = con.prepareStatement("select order_id from ordered_products where prod_id = ?"))
+        {
+            pst.setInt(1,productId);
+            ResultSet rs = pst.executeQuery();
+
+            while(rs.next())
+                orderIdList.add(new Integer(rs.getInt(1)));
+    }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
+        for(Integer i:orderIdList){
+            System.out.println(i);
+        }
+        try(Connection con2 = DriverManager.getConnection(url,"root","chaithra");
+            PreparedStatement pst2 = con2.prepareStatement("select order_date from orders where order_id = ?")) {
+
+            for (Integer i : orderIdList) {
+                pst2.setInt(1, i);
+                ResultSet rs = pst2.executeQuery();
+
+                while (rs.next())
+                    orderIdList.add(new Integer(rs.getInt(1)));
+            }
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+
+    public void displayOrderedProductsByOrderedDate(String orderDate){
+
+    }
+
+    public static void main(String[] args) {
+        OrderedProductsDAO o=new OrderedProductsDAO();
+        o.displayorderedProductByID(1);
+    }
+}
