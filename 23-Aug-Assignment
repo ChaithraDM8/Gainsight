@@ -1,0 +1,26 @@
+public class HashMapDisplay {
+    public static void main(String[] args) {
+        
+        //HAshMAp of email and password
+        HashMap<String, String> map = new HashMap<>();
+        map.put("chaithra@gmail.com","password1");
+        map.put("sihi@gmail.com","password2");
+        map.put("ramya@gmail.com","password3");
+
+        for(Entry<String,String> k:map.entrySet()){
+            System.out.println(k.getKey() + " "+k.getValue());
+        }
+        //HashMap of Employee and Address
+        HashMap<Employee,Address> map2=new HashMap<>();
+        map2.put(new Employee(101,"Ajay",1000),new Address("MG street","Banglore","Karnataka"));
+        map2.put(new Employee(102,"bob",1200),new Address("MG street","tumkur","Karnataka"));
+
+        Set<Entry<Employee,Address>> eSet= map2.entrySet();
+        for(Entry<Employee,Address> e:eSet){
+            System.out.println(e.getKey());
+            System.out.println(e.getValue());
+            System.out.println();
+        }
+
+    }
+}
