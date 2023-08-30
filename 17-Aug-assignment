@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>RegistrationForm</title>
+
+</head>
+<body >
+
+<h1 > Registration Form </h1>
+<form style = "text-align: left;">
+  <label> FirstName :</label>
+  <input type="text" name="firstname" size="20"/> <br> <br>
+  <label> LastName :</label>
+  <input type="text" name="lastname" size="20"/> <br> <br>
+  <label> Date of Birth :</label>
+  <input type="date" name="birthday"/> <br> <br>
+
+  <label> Password :</label>
+  <input type="password" name="password" size="20"/> <br> <br>
+
+  <label> Qualification :</label>
+  <input type="checkbox" name="Graduate" checked/> Graduate
+  <input type="checkbox"  name="Post Graduate"/> Post Graduate<br><br>
+
+  <label> Gender :</label>
+  <input type="radio" id ="1" name = "gender" /> Male
+  <input type="radio" id="2" name = "gender" /> Female <br><br>
+
+  <label>Country  :</label>
+  <select>
+    <option value="America">America</option>
+    <option value="Brazil">Brazil</option>
+    <option value="Canada">Canada</option>
+    <option value="Egypt">Egypt</option>
+    <option value="India">India</option>
+    <option value="Srilanka">Srilanka</option>
+  </select>
+  <br><br>
+
+  <label> Mobile :</label>
+  <input type="text" name="Mobile number" size="10"/> <br> <br>
+  <label> email :</label>
+  <input type="email" name="email" size="20"/> <br> <br>
+
+  Comments :
+  <textarea cols="80" rows="4" value="comment">
+</textarea>
+  <br> <br>
+
+  <input type="submit" value="Register"/>
+  <input type="reset" value="Cancel"/>
+</form>
+</body>
+</html>
