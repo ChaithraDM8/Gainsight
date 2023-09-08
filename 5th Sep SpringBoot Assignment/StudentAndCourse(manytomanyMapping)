@@ -1,0 +1,74 @@
+package com.gainsight.StudentManagement.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.gainsight.StudentManagement.repository.StudentRepository;
+import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+@Entity
+public class Course {
+    @Id
+    @Column(name="course_id")
+    private int courseId;
+    @Column(name="course_name")
+    private String courseName;
+    @Column(name="course_duration")
+    private int courseDuration;
+
+
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "courses",fetch=FetchType.EAGER)
+    private List<Student> students;
+    public Course(List<Student> students) {
+        this.students = students;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+    public void enrollCourseToStudent(Student student) {
+        students.add(student);
+        //System.out.println(student.getCourses().get(0).getCourseId());
+    }
+    public Course(){}
+
+    public Course(int courseId, String courseName, int courseDuration) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.courseDuration = courseDuration;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public int getCourseDuration() {
+        return courseDuration;
+    }
+
+    public void setCourseDuration(int courseDuration) {
+        this.courseDuration = courseDuration;
+    }
+
+
+}
