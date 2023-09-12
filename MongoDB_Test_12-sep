@@ -1,0 +1,14 @@
+1. db.employees.insertOne({"Name":" John Smith","Position":"Software Engineer"," Department":"Engineering","Salary":85000,"Hire Date":"January 15, 2023"})
+2. db.employees.updateMany({},{$set:{"Salary":90000}});
+3. db.employees.find({$and:[{},{"Salary":{$gt:80000}}]});
+4. db.employee.deleteOne({"Department":"Marketing"});
+
+5. db.orders.insertOne({"order_date": ISODate("2023-07-01"),"total_price":1000,"order_by":"Alia"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("650001bdfd00ccdac8cb0515")
+}
+db.orders.aggregate([{$match:{ order_date:{ $gte:new Date('2023-06-01'), $lte: new Date('2023-08-01')}}},{$group: {_id: null,totalRevenueAmount: {$sum: "$total_price"}}}])
+
+6. db.products.createIndex({"product_code":1});
+product_code_1
